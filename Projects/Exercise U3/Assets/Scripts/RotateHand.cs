@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class RotateHand : MonoBehaviour
 {
-    private float turnAmount = 360;
-    public bool useDeltaTime;
+    private float turnAmount = -6f;
+
+    [SerializeField]
+    private bool useDeltaTime;
 
     // Start is called before the first frame update
     void Start()
@@ -18,13 +20,11 @@ public class RotateHand : MonoBehaviour
     {
         if (!useDeltaTime)
         {
-            Quaternion totalRotation = Quaternion.Euler(0, 0, turnAmount);
-            transform.rotation = totalRotation;
+            transform.Rotate(0, 0, turnAmount);
         }
         else
         {
-            Quaternion totalRotation = Quaternion.Euler(0, 0, turnAmount * Time.deltaTime);
-            transform.rotation = totalRotation;
+            transform.Rotate(0, 0, turnAmount * Time.deltaTime);
         }
     }
 }

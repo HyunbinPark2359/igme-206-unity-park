@@ -1,0 +1,17 @@
+Game Project: PE - U03: Creating a Clock with 2D Unity
+Creator: Bin Park
+Version: 1.0
+Date: 10/29/2024
+
+
+New features
+- Creates a clock object
+﻿
+Fixes
+﻿- 
+﻿
+Improvements (of existing features)
+- ﻿
+
+Known Bugs
+﻿- 
