@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 788648949}
   - component: {fileID: 788648948}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: SpawnManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -319,7 +319,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 734e75d4bab797945afc4cd77b3c0327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites: []
+  sprites:
+  - {fileID: 21300000, guid: 930a0a0f33d0d344a88e5761bacac792, type: 3}
+  - {fileID: 21300000, guid: d5e9dd3e800695a4a95624f0e54c9820, type: 3}
+  - {fileID: 21300000, guid: 19d2c0f2b8eec474ebb9718bffe64392, type: 3}
+  - {fileID: 21300000, guid: d6953c8db2bdd8f4599631b16e96a8cc, type: 3}
+  - {fileID: 21300000, guid: beddd5e6b092926418369bd3f9cf035e, type: 3}
+  prefab: {fileID: 7672121617382686432, guid: 9cda3404e6aa5e641bdb4cbc198e3cb7, type: 3}
   meanX: 0
   stdDevX: 2
   meanY: 0
@@ -680,7 +686,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1607510041}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 788648948}
+        m_TargetAssemblyTypeName: SpawnManager, Assembly-CSharp
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1607510041
 MonoBehaviour:
   m_ObjectHideFlags: 0
