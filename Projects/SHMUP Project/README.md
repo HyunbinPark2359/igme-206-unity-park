@@ -11,6 +11,7 @@
 
 -   Camera Orientation: Topdown View
 -   Camera Movement: Fixed Camera
+    -   Returns the player back to the boundaries if they move out of bounds
 -   Player Health: Stocks
 -   End Condition: A wave ends when the player:
     -   Exhausts all their stocks
@@ -24,15 +25,15 @@ The player will face enemies divided into 50 waves. To achieve ultimate victory,
 ### Controls
 
 -   Movement
-    -   Up: ↑
-    -   Down: ↓
-    -   Left: ←
-    -   Right: →
+    -   Up: W, ↑
+    -   Down: S, ↓
+    -   Left: A, ←
+    -   Right: D, →
 -   Fire: Z
 -   Ability: X
 -   Bomb: C
 
-## You Additions
+## Your Additions
 
 ### Special Ability
 -   The player has a special ability that grants **_Invincibility_** for one second upon activation.
@@ -41,10 +42,15 @@ The player will face enemies divided into 50 waves. To achieve ultimate victory,
 ### Bomb
 -   Using a bomb instantly removes all bullets on the field and converts them into points.
 
+### High Scores
+-   Keeps track of the highest score the player reached.
+
+### Boss Enemy
+-   Reaching specific score causes to spawn the boss ship with more health.
+
 ## Sources
 
--   _List all project sources here –models, textures, sound clips, assets, etc._
--   _If an asset is from the Unity store, include a link to the page and the author’s name_
+-   Space ship sprite sheet - https://www.spriters-resource.com/snes/strikegunner/sheet/75354/
 
 ## Known Issues
 
