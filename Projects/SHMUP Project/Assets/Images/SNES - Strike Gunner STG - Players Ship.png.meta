@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,217 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: SNES - Strike Gunner STG - Players Ship_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 137
+        width: 19
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58d6c9416fecfab498759565ae25789f
+      internalID: 1021010864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Strike Gunner STG - Players Ship_1
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 138
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bc6360712c506f49a7bf1470251dc8b
+      internalID: 1282858977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Strike Gunner STG - Players Ship_2
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 138
+        width: 10
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a365b731449e85347bb38c7b4e437369
+      internalID: -1843050607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Strike Gunner STG - Players Ship_3
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 167
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c8577b931a065a47a321a54dd9cd36d
+      internalID: -1672065688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Strike Gunner STG - Players Ship_4
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 154
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27f0120af5edc924c88549e187575ed1
+      internalID: 250596865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Strike Gunner STG - Players Ship_5
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 143
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e83e49f18c6aa043b3aa5646a30e189
+      internalID: 368467228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Strike Gunner STG - Players Ship_6
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 132
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e052a0d2c1282846b405b502eabd2ee
+      internalID: -1367736790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Strike Gunner STG - Players Ship_7
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 102
+        width: 19
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa0c54cbcc1c56048883d3ffc4e1612d
+      internalID: 1905318691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Strike Gunner STG - Players Ship_8
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 102
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c7721457e7c57045bf7685eddf75391
+      internalID: 1000138685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SNES - Strike Gunner STG - Players Ship_9
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 101
+        width: 10
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f07f84758866db24fbb1f0be78cdd081
+      internalID: 1312653879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +329,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SNES - Strike Gunner STG - Players Ship_0: 1021010864
+      SNES - Strike Gunner STG - Players Ship_1: 1282858977
+      SNES - Strike Gunner STG - Players Ship_2: -1843050607
+      SNES - Strike Gunner STG - Players Ship_3: -1672065688
+      SNES - Strike Gunner STG - Players Ship_4: 250596865
+      SNES - Strike Gunner STG - Players Ship_5: 368467228
+      SNES - Strike Gunner STG - Players Ship_6: -1367736790
+      SNES - Strike Gunner STG - Players Ship_7: 1905318691
+      SNES - Strike Gunner STG - Players Ship_8: 1000138685
+      SNES - Strike Gunner STG - Players Ship_9: 1312653879
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -9,13 +9,13 @@ public class MovementController : MonoBehaviour
     private Vector3 direction = Vector3.zero;
     private Vector3 velocity = Vector3.zero;
     [SerializeField]
-    private float speed = 7f;
+    private float speed = 8f;
 
     // Fields for screen wrapping
-    private float screenLeft;
-    private float screenRight;
-    private float screenTop;
-    private float screenBottom;
+    public static float screenLeft;
+    public static float screenRight;
+    public static float screenTop;
+    public static float screenBottom;
 
     // Set property for direction
     public Vector3 Direction
@@ -26,7 +26,7 @@ public class MovementController : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void Awake()
     {
         // Initialize the GameObject¡¯s position
         objectPosition = transform.position;

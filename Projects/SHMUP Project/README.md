@@ -29,7 +29,7 @@ The player will face enemies divided into 50 waves. To achieve ultimate victory,
     -   Down: S, ↓
     -   Left: A, ←
     -   Right: D, →
--   Fire: Z
+-   Fire: Z, Left Click
 -   Ability: X
 -   Bomb: C
 
@@ -54,7 +54,8 @@ The player will face enemies divided into 50 waves. To achieve ultimate victory,
 
 ## Known Issues
 
-_List any errors, lack of error checking, or specific information that I need to know to run your program_
+-   Shooting a fire when enemy's ship is in the scene throws a NullReferenceException but works fine.
+-   Ship shoots a fire again when a player releases the fire button.
 
 ### Requirements not completed
 

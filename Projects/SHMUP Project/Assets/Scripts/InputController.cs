@@ -8,9 +8,20 @@ public class InputController : MonoBehaviour
     private Vector2 inputDirection;
     private MovementController myMovementController;
 
+    // Fields for shooting player's bullets
+    public GameObject bulletPrefab;
+    private Vector3 bulletSpawnPoint;
+    public static List<GameObject> spawnedPlayerBullets = new List<GameObject>();
+
     private void Start()
     {
         myMovementController = GetComponent<MovementController>();
+    }
+
+    private void Update()
+    {
+        // bulletSpawnPoint is fixed on player's position
+        bulletSpawnPoint = transform.position;
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -23,5 +34,12 @@ public class InputController : MonoBehaviour
         {
             myMovementController.Direction = inputDirection;
         }
+    }
+
+    // Spawn bullets and keep track of those objects
+    public void Shoot(InputAction.CallbackContext context)
+    {
+        GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint, Quaternion.identity);
+        spawnedPlayerBullets.Add(bullet);
     }
 }
