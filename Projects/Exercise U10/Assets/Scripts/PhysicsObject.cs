@@ -16,7 +16,7 @@ public class PhysicsObject : MonoBehaviour
     public bool useGravity = false;
     public float coefFriction;
     public float gravityStrength = 1.0f;
-    public float maxSpeed = 20.0f;
+    public float maxSpeed = 2.0f;
 
     // Fields for screen boundary
     public float screenLeft;

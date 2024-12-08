@@ -5,19 +5,27 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     private SpriteRenderer mySpriteRenderer;
-    public float minX;
-    public float maxX;
-    public float minY;
-    public float maxY;
     public float radius;
+
+    public Vector3 Position
+    {
+        get
+        {
+            return transform.position;
+        }
+    }
+
+    public float Radius
+    {
+        get
+        {
+            return radius;
+        }
+    }
 
     void Start()
     {
         mySpriteRenderer = GetComponent<SpriteRenderer>();
-        minX = mySpriteRenderer.bounds.min.x;
-        maxX = mySpriteRenderer.bounds.max.x;
-        minY = mySpriteRenderer.bounds.min.y;
-        maxY = mySpriteRenderer.bounds.max.y;
         radius = mySpriteRenderer.bounds.extents.x;
     }
 }

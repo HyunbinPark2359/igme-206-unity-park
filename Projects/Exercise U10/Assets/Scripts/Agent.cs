@@ -1,19 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
 public abstract class Agent : MonoBehaviour
 {
-    public PhysicsObject myPhysicsObject;
+    protected PhysicsObject myPhysicsObject;
+    protected Vector3 totalForce = Vector3.zero;
 
-    public Vector3 totalForce = Vector3.zero;
+    [SerializeField] private float wanderAngle = 0.0f;
+    [SerializeField] private float maxWanderAngle = 45.0f;
+    [SerializeField] private float maxWanderChangePerSecond = 45.0f;
 
-    protected float wanderAngle = 0.0f;
-    public float maxWanderAngle = 45.0f;
-    public float maxWanderChangePerSecond = 45.0f;
-
-    public List<GameObject> obstacles = new List<GameObject>();
+    // Obstacles in the scene
+    [SerializeField] private List<Obstacle> obstacles = new List<Obstacle>();
 
     public Vector3 Position
     {
@@ -114,19 +116,111 @@ public abstract class Agent : MonoBehaviour
         }
     }
 
-    public void AvoidObstacle(List<GameObject> obstacles)
+    public Vector3 AvoidObstacle(float weight = 1.0f)
     {
-        foreach (GameObject obstacle in obstacles)
+        Vector3 avoidingForce = Vector3.zero;   // Avoid steering force
+        Vector3 desiredVelocity = Vector3.zero; // Right or left of the agent
+        List<Obstacle> obstaclesInPath = new List<Obstacle>(); // Obstacles in the agent's path
+        Obstacle closestObstacle = null;        // The closest obstacle in the agent's path
+        float closestSqrDistance = -1.0f;       // Agent's distance to the closest obstacle on its path
+
+        // Iterate through the obstacles to determine if it's in the agent's path
+        foreach (Obstacle obstacle in obstacles)
         {
-            if (myPhysicsObject.direction.x < 0 && obstacle.transform.position.x > myPhysicsObject.position.x)
-                // If the agent is heading negative x and the x-coord of the obstacle is bigger than one of agent
+            // obstacle.GetComponent<SpriteRenderer>().color = Color.white;
+
+            // Agent's distance to the obstacle
+            Vector3 toObstacle = obstacle.Position - this.Position;
+            float dotProduct = Vector3.Dot(this.myPhysicsObject.velocity.normalized, toObstacle.normalized);
+            if (dotProduct < 0) // Dot product is negative when the object is behind the agent
             {
-                obstacles.Remove(obstacle);
+                continue; // This obstacle is not in the path, move on to next obstacle
             }
-            else if (myPhysicsObject.direction.x > 0 && obstacle.transform.position.x < myPhysicsObject.position.x)
+
+            float unitAway = 3.0f;
+            if (toObstacle.sqrMagnitude > Mathf.Pow(unitAway, 2)) // The obstacle is far enough from the agent
             {
-                obstacles.Remove(obstacle);
+                continue; // This obstacle is not in the path, move on to next obstacle
+            }
+
+            dotProduct = Vector3.Dot(this.transform.right, toObstacle);
+            if (this.myPhysicsObject.Radius + obstacle.Radius < Mathf.Abs(dotProduct)) // Reynold's test for non-intersection
+            {
+                continue; // This obstacle is not in the path, move on to next obstacle
+            }
+
+            // Add this obstacle to the list
+            obstaclesInPath.Add(obstacle);
+
+            // Update the closestObstacle if this one is the closest
+            if (closestSqrDistance < 0 || closestSqrDistance > toObstacle.sqrMagnitude)
+            {
+                closestSqrDistance = toObstacle.sqrMagnitude;
+                closestObstacle = obstacle;
             }
         }
+
+        /* for debugging
+        foreach(Obstacle obstacle in obstaclesInPath)
+        {
+            obstacle.GetComponent<SpriteRenderer>().color = Color.red;
+        }
+        */
+
+        // Determine the avoid steering force from the closestObstacle
+        if (closestObstacle != null)
+        {
+            Vector3 toClosest = closestObstacle.Position - this.Position;
+            float dotProduct = Vector3.Dot(this.transform.right, toClosest);
+
+            if (dotProduct > 0) // Obstacle on the right
+            {
+                desiredVelocity = -this.transform.right * myPhysicsObject.maxSpeed; // Turn left
+            }
+            else // Obstacle either on the left or in front
+            {
+                desiredVelocity = this.transform.right * myPhysicsObject.maxSpeed; // Turn right
+            }
+            avoidingForce = desiredVelocity - myPhysicsObject.velocity;
+
+            // Change the direction of avoidingForce
+            // if it leads the agent to move out of the screen
+            // The movement bugs when the futurePosition is too long
+            Vector3 futurePosition = this.Position + avoidingForce.normalized * 0.3f;
+            if (futurePosition.x < myPhysicsObject.screenLeft || futurePosition.x > myPhysicsObject.screenRight ||
+                futurePosition.y < myPhysicsObject.screenBottom || futurePosition.y > myPhysicsObject.screenTop)
+            {
+                avoidingForce.x = -avoidingForce.x;
+                avoidingForce.y = -avoidingForce.y;
+            }
+
+            // Very close obstacle increases the weight of the force
+            if (toClosest.sqrMagnitude < 1.0f)
+            {
+                weight *= Mathf.Clamp((1 / toClosest.sqrMagnitude), 1, 5);
+            }
+        }
+
+        return avoidingForce * weight;
     }
+
+    /*
+    void OnDrawGizmos()
+    {
+        if (obstacles == null || obstacles.Count == 0) return;
+
+        foreach (Obstacle obstacle in obstacles)
+        {
+            Vector3 toObstacle = obstacle.Position - this.Position;
+            float distance = toObstacle.magnitude;
+
+#if UNITY_EDITOR
+            // Draw distance label
+            //Handles.Label(obstacle.Position, $"Distance: {distance:F2}");
+            // Draw velocity label
+            Handles.Label(this.Position, $"{myPhysicsObject.velocity.magnitude:F2}");
+#endif
+        }
+    }
+    */
 }
