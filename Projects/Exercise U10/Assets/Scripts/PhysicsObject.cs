@@ -60,7 +60,7 @@ public class PhysicsObject : MonoBehaviour
         screenTop = screenTopRight.y;
     }
 
-    void Update()
+    void LateUpdate()
     {
         // Calculate acceleration
         ApplyGravity();
