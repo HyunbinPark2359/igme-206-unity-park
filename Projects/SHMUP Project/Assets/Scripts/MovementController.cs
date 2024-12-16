@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
+    public static MovementController instance { get; private set; }
+
     // Fields for vehicle movement
     private Vector3 objectPosition;
     private Vector3 direction = Vector3.zero;
     private Vector3 velocity = Vector3.zero;
-    [SerializeField]
-    private float speed = 8f;
+    [SerializeField] private float speed = 8f;
 
     // Fields for screen wrapping
     public static float screenLeft;
@@ -26,8 +27,23 @@ public class MovementController : MonoBehaviour
         }
     }
 
+    // Get/Set property for speed
+    public float Speed
+    {
+        get
+        {
+            return speed;
+        }
+        set
+        {
+            speed = value;
+        }
+    }
+
     private void Awake()
     {
+        instance = this;
+
         // Initialize the GameObject¡¯s position
         objectPosition = transform.position;
 

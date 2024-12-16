@@ -12,15 +12,17 @@
 -   Camera Orientation: Topdown View
 -   Camera Movement: Fixed Camera
     -   Returns the player back to the boundaries if they move out of bounds
--   Player Health: Stocks
--   End Condition: A wave ends when the player:
-    -   Exhausts all their stocks
-    -   Eliminates all enemies
--   Scoring: The player earns points by eliminating enemies and finishing each wave. Faster the wave ends, more the points earned.
+-   Player Health: 3 Stocks
+    -   Player loses a stock upon its collision to enemy's ship or bullet
+    -   Remaining stock is indicated on top right corner
+-   Player Projectile: Player fires projectiles by pressing fire button
+    -   There's 0.2 second of delay between shoots
+-   End Condition: A game ends when the player exhausts all their stocks
+-   Scoring: The player earns points by eliminating enemies
 
 ### Game Description
 
-The player will face enemies divided into 50 waves. To achieve ultimate victory, the player must clear all the waves.
+The player will face endless enemies. The player must earn the most points.
 
 ### Controls
 
@@ -30,8 +32,8 @@ The player will face enemies divided into 50 waves. To achieve ultimate victory,
     -   Left: A, ←
     -   Right: D, →
 -   Fire: Z, Left Click
--   Ability: X
--   Bomb: C
+-   Ability: X, Right Click
+-   Bomb: C, Space
 
 ## Your Additions
 
@@ -40,7 +42,7 @@ The player will face enemies divided into 50 waves. To achieve ultimate victory,
 -   While in **_Invincibility_**, movement speed is greatly increased, and all damage is ignored.
 
 ### Bomb
--   Using a bomb instantly removes all bullets on the field and converts them into points.
+-   Using a bomb instantly removes all bullets and enemies on the field and converts them into points.
 
 ### High Scores
 -   Keeps track of the highest score the player reached.
@@ -50,12 +52,22 @@ The player will face enemies divided into 50 waves. To achieve ultimate victory,
 
 ## Sources
 
--   Space ship sprite sheet - https://www.spriters-resource.com/snes/strikegunner/sheet/75354/
+-   Player ship and bullet - Void - Main Ship
+    -   https://foozlecc.itch.io/void-main-ship
+-   Enemy ship and bullet - Void - Fleet Pack 1 - Kla'ed
+    -   https://foozlecc.itch.io/void-fleet-pack-1
+-   Space background
+    -   https://opengameart.org/content/space-background-1
+-   Heart sprite - Heart 16*16 by NicoleMarieProductions
+    -   https://opengameart.org/content/heart-1616
+-   Bomb sprite
+    -   https://opengameart.org/content/16-bit-animated-bomb
+-    Background music - Lunar Harvest by FoxSynergy
+    -   https://opengameart.org/content/lunar-harvest
 
 ## Known Issues
 
 -   Shooting a fire when enemy's ship is in the scene throws a NullReferenceException but works fine.
--   Ship shoots a fire again when a player releases the fire button.
 
 ### Requirements not completed
 

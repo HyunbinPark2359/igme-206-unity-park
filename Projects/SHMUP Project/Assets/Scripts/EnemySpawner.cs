@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    public static EnemySpawner instance { get; private set; }
+
     [SerializeField] private GameObject enemyPrefab;
     [SerializeField] private float spawnInterval = 2.0f;
     [SerializeField] private float spawnRangeX = 8.0f;
@@ -11,6 +13,11 @@ public class EnemySpawner : MonoBehaviour
 
     private float spawnTimer;
     private float spawnY;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -37,5 +44,18 @@ public class EnemySpawner : MonoBehaviour
         Vector3 spawnPosition = new Vector3(spawnX, spawnY, 0);
         GameObject ship = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
         spawnedEnemyShips.Add(ship);
+    }
+
+    // Clear all spawned enemy ships and convert to score
+    public void ExplodeShips()
+    {
+        foreach (GameObject ship in spawnedEnemyShips)
+        {
+            if (ship != null)
+            {
+                UI.instance.AddScore(10);
+                Destroy(ship);
+            }
+        }
     }
 }

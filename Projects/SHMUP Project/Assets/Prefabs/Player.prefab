@@ -74,10 +74,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1819263221
+  m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1021010864, guid: 9f37d9d89ce96fa49825161ccc6a8eba, type: 3}
+  m_Sprite: {fileID: -1313339131079880712, guid: da061e361adf5d34296e4c454fdb4cdf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -175,6 +175,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 0355a979-0852-4a8b-92a0-4b4ba7e7bc3f
     m_ActionName: Player/Fire[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1051316118237868755}
+        m_TargetAssemblyTypeName: InputController, Assembly-CSharp
+        m_MethodName: Ability
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 51e6c954-a8b9-48fb-ac6a-64387b06840e
+    m_ActionName: Player/Ability[/Keyboard/x,/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1051316118237868755}
+        m_TargetAssemblyTypeName: InputController, Assembly-CSharp
+        m_MethodName: Bomb
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c722d815-c3e6-43f6-9c17-2f7565fe9096
+    m_ActionName: Player/Bomb[/Keyboard/c,/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

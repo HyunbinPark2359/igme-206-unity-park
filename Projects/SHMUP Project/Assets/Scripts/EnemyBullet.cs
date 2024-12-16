@@ -8,6 +8,9 @@ public class EnemyBullet : Bullet
     {
         base.Start();
 
+        // Enemy's bullet is facing downwards
+        transform.rotation = Quaternion.Euler(0, 0, 180);
+
         // Enemy's bullets move downwards
         bulletDirection = Vector3.down;
     }
