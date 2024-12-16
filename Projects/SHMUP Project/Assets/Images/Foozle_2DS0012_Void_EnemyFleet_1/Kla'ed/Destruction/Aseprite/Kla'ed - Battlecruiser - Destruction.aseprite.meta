@@ -75,7 +75,7 @@ ScriptedImporter:
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 7
+    defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -88,7 +88,7 @@ ScriptedImporter:
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 7
+    defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638699524300654118
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -123,7 +123,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Kla'ed - Battlecruiser - Destruction_Frame_0
     originalName: 
-    pivot: {x: 0.5, y: -0.3068182}
+    pivot: {x: 0.5, y: 0.42045456}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -143,7 +143,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 311}
   - name: Kla'ed - Battlecruiser - Destruction_Frame_1
     originalName: 
-    pivot: {x: 0.5, y: -0.3068182}
+    pivot: {x: 0.5, y: 0.42045456}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -163,7 +163,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 407}
   - name: Kla'ed - Battlecruiser - Destruction_Frame_2
     originalName: 
-    pivot: {x: 0.5, y: -0.3068182}
+    pivot: {x: 0.5, y: 0.42045456}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -183,7 +183,7 @@ ScriptedImporter:
     uvTransform: {x: 84, y: 4}
   - name: Kla'ed - Battlecruiser - Destruction_Frame_3
     originalName: 
-    pivot: {x: 0.5, y: -0.3068182}
+    pivot: {x: 0.5, y: 0.42045456}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -203,7 +203,7 @@ ScriptedImporter:
     uvTransform: {x: 84, y: 100}
   - name: Kla'ed - Battlecruiser - Destruction_Frame_4
     originalName: 
-    pivot: {x: 0.5, y: -0.3068182}
+    pivot: {x: 0.5, y: 0.42045456}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -223,7 +223,7 @@ ScriptedImporter:
     uvTransform: {x: 84, y: 196}
   - name: Kla'ed - Battlecruiser - Destruction_Frame_5
     originalName: 
-    pivot: {x: 0.5, y: -0.3068182}
+    pivot: {x: 0.5, y: 0.42045456}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -243,7 +243,7 @@ ScriptedImporter:
     uvTransform: {x: 84, y: 292}
   - name: Kla'ed - Battlecruiser - Destruction_Frame_6
     originalName: 
-    pivot: {x: 0.5, y: -0.2777778}
+    pivot: {x: 0.5, y: 0.43333334}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -263,7 +263,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 213}
   - name: Kla'ed - Battlecruiser - Destruction_Frame_7
     originalName: 
-    pivot: {x: 0.5, y: -0.22340424}
+    pivot: {x: 0.5, y: 0.45744678}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -283,7 +283,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: Kla'ed - Battlecruiser - Destruction_Frame_8
     originalName: 
-    pivot: {x: 0.53061223, y: -0.20224719}
+    pivot: {x: 0.53061223, y: 0.5168539}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -303,7 +303,7 @@ ScriptedImporter:
     uvTransform: {x: 164, y: 203}
   - name: Kla'ed - Battlecruiser - Destruction_Frame_9
     originalName: 
-    pivot: {x: 0.4827586, y: -0.16842106}
+    pivot: {x: 0.4827586, y: 0.5052632}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -323,7 +323,7 @@ ScriptedImporter:
     uvTransform: {x: 164, y: 100}
   - name: Kla'ed - Battlecruiser - Destruction_Frame_10
     originalName: 
-    pivot: {x: 0.4848485, y: -0.121212125}
+    pivot: {x: 0.4848485, y: 0.5252525}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -343,7 +343,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 106}
   - name: Kla'ed - Battlecruiser - Destruction_Frame_11
     originalName: 
-    pivot: {x: 0.4848485, y: -0.114583336}
+    pivot: {x: 0.4848485, y: 0.5520834}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -363,7 +363,7 @@ ScriptedImporter:
     uvTransform: {x: 84, y: 388}
   - name: Kla'ed - Battlecruiser - Destruction_Frame_12
     originalName: 
-    pivot: {x: 0.4848485, y: -0.14772728}
+    pivot: {x: 0.4848485, y: 0.5795455}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -383,7 +383,7 @@ ScriptedImporter:
     uvTransform: {x: 164, y: 4}
   - name: Kla'ed - Battlecruiser - Destruction_Frame_13
     originalName: 
-    pivot: {x: 0.54545456, y: -0.21538462}
+    pivot: {x: 0.54545456, y: 0.7692308}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -538,7 +538,67 @@ ScriptedImporter:
       spriteId: 173e3797611fa254799d026adb0898db
     linkedCells: []
     parentIndex: -1
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: iPhone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 

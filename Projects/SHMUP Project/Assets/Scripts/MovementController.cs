@@ -12,12 +12,6 @@ public class MovementController : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     [SerializeField] private float speed = 8f;
 
-    // Fields for screen wrapping
-    public static float screenLeft;
-    public static float screenRight;
-    public static float screenTop;
-    public static float screenBottom;
-
     // Set property for direction
     public Vector3 Direction
     {
@@ -46,16 +40,6 @@ public class MovementController : MonoBehaviour
 
         // Initialize the GameObject¡¯s position
         objectPosition = transform.position;
-
-        // Calculate screen boundaries
-        Vector3 screenBottomLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, Camera.main.nearClipPlane));
-        Vector3 screenTopRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.nearClipPlane));
-
-        // Initialize fields
-        screenLeft = screenBottomLeft.x;
-        screenRight = screenTopRight.x;
-        screenBottom = screenBottomLeft.y;
-        screenTop = screenTopRight.y;
     }
 
     void Update()
@@ -71,22 +55,22 @@ public class MovementController : MonoBehaviour
 
     private void BoundariesAroundTheEdges()
     {
-        if (objectPosition.x < screenLeft) // Left boundary
+        if (objectPosition.x < ScreenDetector.ScreenLeft) // Left boundary
         {
-            objectPosition.x = screenLeft;
+            objectPosition.x = ScreenDetector.ScreenLeft;
         }
-        else if (objectPosition.x > screenRight) // Right boundary
+        else if (objectPosition.x > ScreenDetector.ScreenRight) // Right boundary
         {
-            objectPosition.x = screenRight;
+            objectPosition.x = ScreenDetector.ScreenRight;
         }
 
-        if (objectPosition.y < screenBottom) // Bottom boundary
+        if (objectPosition.y < ScreenDetector.ScreenBottom) // Bottom boundary
         {
-            objectPosition.y = screenBottom;
+            objectPosition.y = ScreenDetector.ScreenBottom;
         }
-        else if (objectPosition.y > screenTop) // Top boundary
+        else if (objectPosition.y > ScreenDetector.ScreenTop) // Top boundary
         {
-            objectPosition.y = screenTop;
+            objectPosition.y = ScreenDetector.ScreenTop;
         }
 
         // Update position after wrapping

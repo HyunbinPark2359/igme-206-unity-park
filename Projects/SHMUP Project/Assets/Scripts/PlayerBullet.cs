@@ -18,7 +18,7 @@ public class PlayerBullet : Bullet
         base.Update();
 
         // Destroy the bullet when it exits the screen
-        if (objectPosition.y > MovementController.screenTop)
+        if (objectPosition.y > ScreenDetector.ScreenTop)
         {
             Destroy(gameObject);
         }

@@ -8,11 +8,20 @@ public class CollisionManager : MonoBehaviour
 
     // SpriteInfo of player ship
     [SerializeField] private SpriteInfo player;
+    [SerializeField] private GameObject boss;
+    private SpriteInfo bossSprite;
 
-    public int scoreValue = 50;
+    public int scoreValue = 50; // Value of enemy ship
+
     private bool isInvincible = false;
     private float abilityTimer = 0.0f;
-    private int abilityToken = 1;
+    private bool abilityToken = true;   // To use ability
+
+    private bool isPlayerHit = false;
+    private float playerHitTimer = 0.0f;
+
+    private bool isBossHit = false;
+    private float bossHitTimer = 0.0f;
 
     public bool IsInvincible
     {
@@ -26,10 +35,13 @@ public class CollisionManager : MonoBehaviour
             isInvincible = value;
         }
     }
+    public bool AbilityToken { set  { isPlayerHit = value; } }
 
     private void Awake()
     {
         instance = this;
+
+        bossSprite = boss.GetComponent<SpriteInfo>();
     }
 
     void Update()
@@ -47,6 +59,7 @@ public class CollisionManager : MonoBehaviour
                 {
                     Destroy(bullet);
                     UI.instance.TakeDamage();
+                    isPlayerHit = true;
                 }
             }
         }
@@ -64,6 +77,7 @@ public class CollisionManager : MonoBehaviour
                 {
                     Destroy(ship);
                     UI.instance.TakeDamage();
+                    isPlayerHit = true;
                 }
 
                 // Detect collision between enemy ship and player's bullet
@@ -86,6 +100,42 @@ public class CollisionManager : MonoBehaviour
             }
         }
 
+        // Detect collision between player bullet and boss
+        foreach (GameObject bullet in InputController.spawnedPlayerBullets)
+        {
+            if (bullet != null)
+            {
+                // SpriteInfo of player's bullet in the scene
+                SpriteInfo playerBulletInfo = bullet.GetComponent<SpriteInfo>();
+
+                // Destroy the bullet if collided with boss
+                if (CircleCollision(playerBulletInfo, bossSprite) && !isInvincible)
+                {
+                    Destroy(bullet);
+                    isBossHit = true;
+                    boss.GetComponent<BossShip>().Health--;
+                }
+            }
+        }
+
+        // Detect collision between player ship and missile
+        foreach (GameObject missile in MissileSpawner.spawnedMissiles)
+        {
+            if (missile != null)
+            {
+                // SpriteInfo of missile in the scene
+                SpriteInfo missileInfo = missile.GetComponent<SpriteInfo>();
+
+                // Destroy the missile if collided with player
+                if (CircleCollision(player, missileInfo) && !isInvincible)
+                {
+                    MissileSpawner.instance.DeactivateMissile(missile);
+                    UI.instance.TakeDamage();
+                    isPlayerHit = true;
+                }
+            }
+        }
+
         // One second timer for special ability
         if (isInvincible)
         {
@@ -96,6 +146,19 @@ public class CollisionManager : MonoBehaviour
             abilityTimer = 0.0f;
             DeactivateAbility();
         }
+
+
+        if (isPlayerHit)
+        {
+            ShowPlayerHitEffect();
+        }
+
+        if (isBossHit)
+        {
+            ShowBossHitEffect();
+        }
+
+        //Debug.Log(abilityToken);
     }
 
     // AABB Collision Detection
@@ -114,9 +177,9 @@ public class CollisionManager : MonoBehaviour
     // Activate special ability
     public void ActivateAbility()
     {
-        if (abilityToken > 0 && !IsInvincible)
+        if (abilityToken && !IsInvincible)
         {
-            abilityToken--;
+            abilityToken = false;
             isInvincible = true;
             MovementController.instance.Speed *= 2;
             player.GetComponent<SpriteRenderer>().color = Color.yellow;
@@ -129,5 +192,33 @@ public class CollisionManager : MonoBehaviour
         isInvincible = false;
         MovementController.instance.Speed /= 2;
         player.GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
+    // Change player sprite color to red for 0.1 second upon its hit
+    public void ShowPlayerHitEffect()
+    {
+        playerHitTimer += Time.deltaTime;
+        player.GetComponent<SpriteRenderer>().color = Color.red;
+
+        if (playerHitTimer > 0.1f)
+        {
+            playerHitTimer = 0.0f;
+            player.GetComponent<SpriteRenderer>().color = Color.white;
+            isPlayerHit = false;
+        }
+    }
+
+    // Change boss sprite color to red for 0.1 second upon its hit
+    public void ShowBossHitEffect()
+    {
+        bossHitTimer += Time.deltaTime;
+        boss.GetComponent<SpriteRenderer>().color = Color.red;
+
+        if (bossHitTimer > 0.1f)
+        {
+            bossHitTimer = 0.0f;
+            boss.GetComponent<SpriteRenderer>().color = Color.white;
+            isBossHit = false;
+        }
     }
 }

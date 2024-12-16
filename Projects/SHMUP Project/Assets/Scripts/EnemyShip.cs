@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class EnemyShip : MonoBehaviour
 {
-    private Vector3 objectPosition;
-    private Vector3 velocity;
-    [SerializeField] private float moveSpeed = 0.2f;
-    [SerializeField] private float lateralSpeed = 2.0f;
+    protected Vector3 objectPosition;
+    protected Vector3 velocity;
+    [SerializeField] protected float moveSpeed = 0.2f;
+    [SerializeField] protected float lateralSpeed = 2.0f;
 
-    private bool movingRight;
+    protected bool movingRight;
     private float randNum; // RNG for ship's movement
 
     // Start is called before the first frame update
@@ -46,19 +46,19 @@ public class EnemyShip : MonoBehaviour
         if (movingRight)
         {
             velocity += Vector3.right * lateralSpeed * Time.deltaTime;
-            if (objectPosition.x > MovementController.screenRight) // Right boundary
+            if (objectPosition.x > ScreenDetector.ScreenRight) // Right boundary
             {
                 movingRight = false;
-                objectPosition.x = MovementController.screenRight;
+                objectPosition.x = ScreenDetector.ScreenRight;
             }
         }
         else
         {
             velocity += Vector3.left * lateralSpeed * Time.deltaTime;
-            if (objectPosition.x < MovementController.screenLeft) // Left boundary
+            if (objectPosition.x < ScreenDetector.ScreenLeft) // Left boundary
             {
                 movingRight = true;
-                objectPosition.x = MovementController.screenLeft;
+                objectPosition.x = ScreenDetector.ScreenLeft;
             }
         }
 
@@ -66,7 +66,7 @@ public class EnemyShip : MonoBehaviour
         transform.position = objectPosition;
 
         // Destroy the ship upon it exits the screen
-        if (objectPosition.y < MovementController.screenBottom)
+        if (objectPosition.y < ScreenDetector.ScreenBottom)
         {
             Destroy(gameObject);
         }
