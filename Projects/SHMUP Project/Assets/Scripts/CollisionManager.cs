@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CollisionManager : MonoBehaviour
 {
-    public static CollisionManager instance { get; private set; }
+    public static CollisionManager instance { get; set; }
 
     // SpriteInfo of player ship
     [SerializeField] private SpriteInfo player;
@@ -157,8 +157,6 @@ public class CollisionManager : MonoBehaviour
         {
             ShowBossHitEffect();
         }
-
-        //Debug.Log(abilityToken);
     }
 
     // AABB Collision Detection

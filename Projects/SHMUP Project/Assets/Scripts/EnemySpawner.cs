@@ -48,15 +48,12 @@ public class EnemySpawner : MonoBehaviour
         else if (bossShip.GetComponent<BossShip>().Health <= 0)
         {
             // Reset ship's position and health
-            bossShip.transform.position = new Vector3(0, ScreenDetector.ScreenTop + 1.1f, 0);
+            bossShip.transform.position = new Vector3(0, ScreenDetector.ScreenTop + 2.5f, 0);
             bossShip.GetComponent<BossShip>().Health = 50;
             isBossSpawned = false;
             bossShip.SetActive(false);
 
             UI.instance.AddScore(300);
-
-            // Restore the ability token
-            CollisionManager.instance.AbilityToken = true;
         }
     }
 
